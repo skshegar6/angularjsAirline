@@ -1,0 +1,42 @@
+
+    <div class="row">
+        <div class="col">
+            <h3>Select List of Flight Based on Time</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="fill">
+                <mat-label>Start Time</mat-label>
+                <mat-select [(value)]="startTime" >
+                  <mat-option *ngFor="let time of flightTimes" [value]="time.id">
+                    {{time.id}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="fill">
+                <mat-label>End Time</mat-label>
+                <mat-select [(value)]="endTime" (selectionChange)="FliterFighths()">
+                  <mat-option *ngFor="let time of flightTimes" [value]="time.id">
+                    {{time.id}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>            
+        </div>
+        <div class="col">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Flight</mat-label>
+                <mat-select [(value)]="selectedFlightInDropDown" (selectionChange)="selectedFight()">
+                  <mat-option *ngFor="let flight of matchedFlights" [value]="flight.id">
+                    {{flight.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>            
+        </div>
+    </div>
+    <app-table ></app-table>
+
+
+

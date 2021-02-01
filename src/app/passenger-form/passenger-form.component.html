@@ -1,0 +1,64 @@
+
+
+
+
+   
+
+<form [formGroup]="passengerForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="passenger-card">
+        <mat-card-header>
+            <mat-card-title>New Passenger Add </mat-card-title>
+            </mat-card-header>
+    </mat-card>
+    <mat-card-content>
+        <div class="row test">
+            <div class="col">
+                <layout [seatsLayout]="seatsLayout" (confirm)="getSelectedSeats($event)"></layout>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Name" formControlName="name">
+                    </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                        <input matInput placeholder="Address" formControlName="address">
+                        </mat-form-field>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                        <input matInput placeholder="Date Of Birth" formControlName="dob">
+                        </mat-form-field>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                        <input matInput placeholder="Seat Details" formControlName="seat_details">
+                        </mat-form-field>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                        <input matInput placeholder="Passport No" formControlName="passport">
+                        </mat-form-field>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button mat-raised-button color="primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+            </div>    
+        </div>
+    </mat-card-content> 
+</form>
+
+

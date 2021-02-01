@@ -1,0 +1,16 @@
+<div class="plane">
+
+  <ol class="cabin fuselage">
+    <li *ngFor="let seats of rows" class="row row--1">
+      <ol class="seats" type="A">
+        <li *ngFor="let seat of seats" class="seat">
+          <input (click)="seatAction(seat)"  type="checkbox" class="booked"  [id]="seat" />
+          <label [for]="seat" #tooltip="matTooltip" matTooltip="Info about the action"
+          [matTooltipPosition]="position.value" disabled >{{seat}}</label>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<button (click)="done()">Done</button>
